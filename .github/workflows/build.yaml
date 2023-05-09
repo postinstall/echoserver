@@ -14,5 +14,6 @@ jobs:
           distribution: 'temurin'
       - name: Build with Maven
         run: |
-          echo $DOCKER_USERNAME
-          # mvn --batch-mode --update-snapshots compile jib:build
+          export DOCKER_USERNAME = ${{ secrets.DOCKER_USERNAME }}
+          export DOCKER_PASSWORD = ${{ secrets.DOCKER_PASSWORD }}
+          mvn --batch-mode --update-snapshots compile jib:build
