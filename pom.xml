@@ -46,10 +46,6 @@
 					</from>
 					<to>
 						<image>postinstall/echoserver:latest</image>
-						<auth>
-							<username>${env.DOCKER_USERNAME}</username>
-							<password>${env.DOCKER_PASSWORD}</password>
-						</auth>
 					</to>
 				</configuration>
 			</plugin>
