@@ -14,5 +14,5 @@ jobs:
           distribution: 'temurin'
       - name: Build with Maven
         run: |
-          # mvn --batch-mode --update-snapshots package
-          mvn compile jib:build
+          echo $DOCKER_USERNAME
+          # mvn --batch-mode --update-snapshots compile jib:build
