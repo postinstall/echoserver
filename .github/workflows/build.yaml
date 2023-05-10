@@ -3,8 +3,8 @@ run-name: Building the Echoserver application
 on: [push]
 
 env:
-  USERNAME: ${{ secrets.DOCKER_USERNAME }}
-  PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:

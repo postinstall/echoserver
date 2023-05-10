@@ -44,15 +44,15 @@
 					<from>
 						<image>eclipse-temurin:17-jre-alpine</image>
 						<auth>
-							<username>${env.USERNAME}</username>
-							<password>${env.PASSWORD}</password>
+							<username>${env.DOCKER_USERNAME}</username>
+							<password>${env.DOCKER_PASSWORD}</password>
 						</auth>
 					</from>
 					<to>
 						<image>postinstall/echoserver:latest</image>
 						<auth>
-							<username>${env.USERNAME}</username>
-							<password>${env.PASSWORD}</password>
+							<username>${env.DOCKER_USERNAME}</username>
+							<password>${env.DOCKER_PASSWORD}</password>
 						</auth>
 					</to>
 				</configuration>
