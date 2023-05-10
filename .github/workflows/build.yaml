@@ -15,7 +15,7 @@ jobs:
       - name: Build with Maven
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_TOKEN }}
         run: |
           echo "${{ env.DOCKER_PASSWORD }}" | docker login -u "${{ env.DOCKER_USERNAME }}" --password-stdin
           mvn compile jib:build
