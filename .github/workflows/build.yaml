@@ -19,4 +19,5 @@ jobs:
         run: |
           export IMAGE_TAG=$(git tag --sort=committerdate | tail -1)
           export IMAGE_NAME="postinstall/echoserver"
-          mvn --batch-mode compile jib:build
+          echo $IMAGE_NAME:$IMAGE_TAG
+          # mvn --batch-mode compile jib:build
