@@ -11,6 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Test
+        run: echo $USERNAME
       - uses: docker/login-action@v2
         with:
           username: ${{ env.USERNAME }}
