@@ -19,4 +19,4 @@ jobs:
       - name: Build with Maven
         run: |
           set
-          mvn --batch-mode --update-snapshots compile jib:build
+          mvn -X compile jib:build
