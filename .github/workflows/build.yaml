@@ -18,4 +18,5 @@ jobs:
           distribution: 'temurin'
       - name: Build with Maven
         run: |
+          set
           mvn --batch-mode --update-snapshots compile jib:build
