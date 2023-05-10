@@ -1,6 +1,9 @@
 name: maven-jib-build
 run-name: Building the Echoserver application
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
