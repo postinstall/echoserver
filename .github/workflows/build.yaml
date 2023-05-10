@@ -17,7 +17,7 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_TOKEN }}
         run: |
-          export IMAGE_TAG=$(git tag --sort=committerdate | tail -1)
+          export IMAGE_TAG=0.1
           export IMAGE_NAME="postinstall/echoserver"
           echo $IMAGE_NAME:$IMAGE_TAG
-          # mvn --batch-mode compile jib:build
+          mvn --batch-mode compile jib:build
