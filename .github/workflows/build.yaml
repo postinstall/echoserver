@@ -3,7 +3,7 @@ run-name: Building the Echoserver application
 on: [push]
 
 env:
-  USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  USERNAME: "postinstall"
   PASSWORD: ${{ secrets.GITHUB_TOKEN }}
 
 
@@ -11,10 +11,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Test
-        run: |
-          echo $USERNAME > .username
-          cat .username
       - uses: docker/login-action@v2
         with:
           username: ${{ env.USERNAME }}
