@@ -18,5 +18,6 @@ jobs:
           distribution: 'temurin'
       - name: Build with Maven
         run: |
-          set
-          mvn -X compile jib:build
+          export DOCKER_USERNAME="postinstall"
+          export DOCKER_PASSWORD="${{ secrets.GITHUB_TOKEN }}"
+          mvn compile jib:build
