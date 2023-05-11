@@ -25,6 +25,3 @@ jobs:
           export IMAGE_NAME="postinstall/echoserver"
           echo "Building $IMAGE_NAME:$BUILD_VERSION"
           mvn --batch-mode compile jib:build
-          # Tag new version as "latest"
-          echo "$DOCKER_PASSWORD" | docker login -u $DOCKER_USERNAME --password-stdin
-          docker tag $IMAGE_NAME:$BUILD_VERSION $IMAGE_NAME:latest
