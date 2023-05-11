@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.postinstall</groupId>
 	<artifactId>echoserver</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${env.BUILD_VERSION}</version>
 	<name>echoserver</name>
 	<description>Simple HTTP Echo Server</description>
 	<properties>
@@ -57,7 +57,7 @@
 						</auth>
 					</from>
 					<to>
-						<image>${env.IMAGE_NAME}:${env.IMAGE_TAG}</image>
+						<image>${env.IMAGE_NAME}:${env.BUILD_VERSION}</image>
 						<auth>
 							<username>${env.DOCKER_USERNAME}</username>
 							<password>${env.DOCKER_PASSWORD}</password>

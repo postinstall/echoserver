@@ -20,7 +20,8 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_TOKEN }}
         run: |
-          export IMAGE_TAG=0.1
+          echo ${{ github.actor }}
+          export BUILD_VERSION=$(grep "### " CHANGELOG.md | cut -d" " -f2 | sort -nr | head -1)
           export IMAGE_NAME="postinstall/echoserver"
-          echo $IMAGE_NAME:$IMAGE_TAG
-          mvn --batch-mode compile jib:build
+          echo $$IMAGE_NAME:$BUILD_VERSION
+          #mvn --batch-mode compile jib:build
