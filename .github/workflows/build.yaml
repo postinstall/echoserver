@@ -20,8 +20,11 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_TOKEN }}
         run: |
-          echo ${{ github.actor }}
+          # Build new version according to CHANGELOG.md
           export BUILD_VERSION=$(grep "### " CHANGELOG.md | cut -d" " -f2 | sort -nr | head -1)
           export IMAGE_NAME="postinstall/echoserver"
-          echo $$IMAGE_NAME:$BUILD_VERSION
-          #mvn --batch-mode compile jib:build
+          echo "Building $IMAGE_NAME:$BUILD_VERSION"
+          mvn --batch-mode compile jib:build
+          # Tag new version as "latest"
+          echo "$DOCKER_PASSWORD" | docker login -u $DOCKER_USERNAME --password-stdin
+          docker tag $IMAGE_NAME:$BUILD_VERSION $IMAGE_NAME:latest
